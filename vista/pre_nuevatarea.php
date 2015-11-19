@@ -58,7 +58,8 @@
 			
 			<div class="form-group">
 			    <label for="pob">Poblacion:</label>
-			    <input name="pob" type="text" class="form-control" id="pob" >
+			    <input name="pob" type="text" class="form-control" id="pob" 
+			    value="<?=  ValorPost('pob') ?>">
 			</div><br>
 			<div class="form-group">
 			    <label for="cp">Codigo postal:</label>
@@ -79,9 +80,6 @@
 			</label>
 			</div><br>
 			
-			<label>Fecha de creación: </label>
-			<INPUT TYPE="date" NAME="fecha_cre" SIZE="20" readonly value=<?= $fechacreacion ?>>
-			<br><br>
 			
 			<div class="form-group">
 			    <label for="encargado">Nombre del operario encargado:</label>
@@ -111,9 +109,6 @@
 			<textarea name="anoant" class="form-control" rows="3"><?=  ValorPost('anoant') ?>
 			</textarea><br>
 			
-			<label for="anopos">Anotaciones posteriores:</label><br>
-			<textarea name="anopos" class="form-control" rows="3"><?=  ValorPost('anopos') ?>
-			</textarea><br>
 			
 			   <input type="submit" value="Finalizar">
 		   

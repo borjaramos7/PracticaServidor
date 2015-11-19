@@ -52,10 +52,29 @@ function borratarea($id)
 	$bd->BorraunRegistro('tarea',$id,'id');
 }
 
-function modificatarea($id)
+function sacauncampo($id,$campo)
 {
+	$dev=array();
 	$bd=database::getInstance();
-	$bd->ModificaRegistros('tarea',$id,'id');
+	$sql = "select ".$campo." FROM tareas.tarea WHERE id=".$id.";";
+	$resu=$bd->Consulta($sql);
+	$dev = $bd->LeeRegistro($resu);
+
+	return $dev[$campo];
+}
+
+function actualiza($array,$id)
+{
+	foreach($array as $campo => $cambio)
+	{
+		$dev=array();
+		$bd=database::getInstance();
+		$sql = "Update tarea Set ".$campo." = ".$cambio." Where id= ".$id.";";
+		
+		$resu=$bd->Consulta($sql);
+	}
+	
+	
 }
 
 ?>

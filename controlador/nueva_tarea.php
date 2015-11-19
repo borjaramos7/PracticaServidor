@@ -49,6 +49,12 @@ else
 	$hayError=TRUE;
 	}
 	
+	if (! isset($_POST['estado']))
+	{ // No tiene estado
+	$errores['cp']='La tarea tiene que tener un estado';
+	$hayError=TRUE;
+	}
+	
 	
 	if ($hayError)
 	{ // Hay error

@@ -63,12 +63,13 @@ function EscribelistaTarea($tareas)
 			}
 			echo '<td>';
 	
-			/*echo '<p><a href="completartarea.php?id='.$id.'" class="btn btn-primary btn-success" title="Completar tarea"><span class="glyphicon glyphicon-ok"></span></a></p>';
-	
-			echo '<p><a href="modificar.php?id='.$id.'"class="btn btn-warning" title="Modificar Tarea"><span class="glyphicon glyphicon-pencil"></span></a></p>';
-	
+			/*echo '<p><a href="completartarea.php?id='.$id.'" class="btn btn-primary btn-success" title="Completar tarea">
+			 * <span class="glyphicon glyphicon-ok"></span></a></p>';
 			*/
-			echo '<a href="borrartarea.php?id='.$id.'" title="Borrar Tarea"><span class="glyphicon glyphicon-remove"></span></a>';
+			echo '<p><a href="modificartarea.php?id='.$id.'" title="Modificar Tarea">
+					<span class="glyphicon glyphicon-pencil"></span></a></p>';
+			echo '<a href="borrartarea.php?id='.$id.'" title="Borrar Tarea">
+					<span class="glyphicon glyphicon-remove"></span></a>';
 	
 			echo '</td>';
 			echo '</tr>';
@@ -77,10 +78,17 @@ function EscribelistaTarea($tareas)
 
 	}
 
+
 function ValorPost($nombreCampo, $valorPorDefecto = '') {
 	if (isset ( $_POST [$nombreCampo] ))
 		return $_POST [$nombreCampo];
 	else
 		return $valorPorDefecto;
 }
-
+function  compruebacheck($valor,$id)
+{
+	if ($valor=sacauncampo($id, 'estado'))
+	return 'checked';
+	else return'';
+	
+}

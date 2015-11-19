@@ -75,6 +75,7 @@ Class database {
 			$this->muestraerror();
 		}
 		return $this->result;
+		
 	}
 	
 	public function muestraerror()
@@ -164,6 +165,5 @@ Class database {
 		return $this->link->query($sql);
 	}
 	
-	
-	
+
 }

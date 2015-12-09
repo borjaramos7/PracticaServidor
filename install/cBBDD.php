@@ -77,7 +77,9 @@ Class database {
 		return $this->result;
 		
 	}
-	
+	/**
+	 * Muestra el error con un formato establecido
+	 */
 	public function muestraerror()
 	{
 		echo "<p>Error: ".$this->link->error."</p>";
@@ -142,7 +144,13 @@ Class database {
 			return NULL;
 		}
 	}
-	
+		/**
+		 * Recibe la tabla donde se inserta y un array con los datos a insertar e introduce esos 
+		 * datos en la BBDD.
+		 * 
+		 * @param unknown $tabla
+		 * @param unknown $registro
+		 */
 		public function Insertar($tabla, $registro){		
 	
 		$values=array();
@@ -158,7 +166,14 @@ Class database {
 		return $this->link->query($sql);
 	}
 	
-	
+	/**
+	 * Tras recibir la tabla la identificación y el campo procede a borrar los datos
+	 * que se encuentre en esas especificaciones
+	 * 
+	 * @param unknown $tabla
+	 * @param unknown $iden
+	 * @param unknown $campoid
+	 */
 	public function BorraunRegistro($tabla,$iden,$campoid)
 	{
 		$sql = "DELETE FROM ".$tabla." WHERE ".$campoid."=".$iden.";";
